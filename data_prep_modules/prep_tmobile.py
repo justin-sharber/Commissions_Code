@@ -22,8 +22,8 @@ def processTMobile(tmobile):
         idx = tmobile.CheckNumber.str.contains(t)
         tmobile.loc[idx, 'CheckType'] = t
 
-    #- Qty: +1, -1, nan -- must follow Incoming!
-    tmobile['Qty'] = tmobile.Incoming / tmobile.Incoming.abs()
+    #- Qty: +1, -1, 0 from Incoming commission
+    tmobile['Qty'] = (tmobile.Incoming / (tmobile.Incoming.abs()+0.0001)).round()
     
     #- attribute Reps
     bl = banList.Rep
