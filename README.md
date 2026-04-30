@@ -125,8 +125,10 @@ A *column key* is an external configuration (stored in Excel) that defines the p
 This system was used in system **Tier 2** for producing the effective "silver layer" of dataframes.  It was a key component in having the data clear and usable at the start of every session.
 
 **Example Column Key Excel File**
-<img width="317" height="433" alt="wi key" src="https://github.com/user-attachments/assets/582712e9-568a-4e3e-a3e9-904f51ca31d3" />
 
+<img width="30%" alt="wi key" src="https://github.com/user-attachments/assets/582712e9-568a-4e3e-a3e9-904f51ca31d3" />
+
+...
 
 **Core Function** 
 
