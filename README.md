@@ -163,7 +163,7 @@ def applyKey(df, keyPath, create=True):
 Preparing data inputs meant performing early calculations that would be useful in any context.  Basic features such as device types and quantity counts were useful to determine early, and then summarizing data downstream was trivial.
 
 For example: A quantity column is useful, showing whether the business was credited a line, charged back on a line, or whether the entry had no net change.  It was useful to describe this mathematically as a quantity of 1, -1, or 0.  This determination could only be made from the incoming commission itself, as line activity was an unreliable feature.
-```
+```python
     #- Qty: +1, -1, 0 from Incoming commission
     tmobile['Qty'] = (tmobile.Incoming / (tmobile.Incoming.abs()+0.0001)).round()
 ```
