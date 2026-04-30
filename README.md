@@ -43,7 +43,7 @@ I built a modularized code system using Python-pandas that simulates core databa
 
 * **Modularity** - Functions and components of processing were separated out into clear, distinct modules.
 
-* **Efficiency** - Designed for as little code redundancy as possible.
+* **Efficiency** - Designed for as little code redundancy as possible, again using modules to provide reusable code.  Vectorized functions were utilized whenver possible.
 
 * **Coherence** - All processing of data was done with a central logic and data flow for consistent results.
 
@@ -155,13 +155,21 @@ def applyKey(df, keyPath, create=True):
 ```
 
 ## Other system features
-*Get these really short and have images for each.*
+**Precalculation and Data Inferences**
+Preparing data inputs meant performing early calculations that would be useful in any context.  Basic features such as device types and quantity counts were useful to determine early, and then summarizing data downstream was trivial.
 
-**Balance Carryover** - *shorten*
+For example: A quantity column is useful, showing whether the business was credited a line, charged back on a line, or whether the entry had no net change.  It was useful to describe this mathematically as a quantity of 1, -1, or 0.  This determination could only be made from the incoming commission itself, as line activity was an unreliable feature.
+```
+    #- Qty: +1, -1, 0 from Incoming commission
+    tmobile['Qty'] = (tmobile.Incoming / (tmobile.Incoming.abs()+0.0001)).round()
+```
+
+**Balance Carryover** 
 Sales agents can incur chargebacks resulting in a net-negative commission balance.  The system needed to calculate, store, and attribute these balances correctly and in accordance with business rules.  The system uses a balance ledger that shows the history of seller balances, and contributes that information to the current month of commission calculations.  Balance calculations had previously been a manual task subject to human error and forgetfulness.  With the balance carryover system, all balances were correctly handled without additional human input.
 
 **Residual Attribution**
 Some sales agents earned residuals on wireless lines, which paid for years after initial activation.  Correctly attributing those lines and crediting the sellers was necessary to uphold the commissions contract.  A simple spreadsheet list of Business Account Numbers / "BANs" attributed to each seller was created as a record - serving as system "memory."  Attributing sellers to their residuals was performed in the preprocessing step for the residual statement.
+
 
 **Calculation Checks**
 Even with a sound code base, errors can occur due to changes in incoming data, new business rules, custom adjustments, or code enhancements and updates.  The system and commission process involves checks throughout the process that validate results.  Checks include:
