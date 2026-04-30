@@ -1,1 +1,1 @@
-Top-level notebooks for commissions code system.  To protect business rules, only a small selection is uploaded.  To protect business data, all outputs have been stripped.  These notebooks may be of limited utility to review, but give a glimpse of the top-level processing layer.
+Top-level notebooks for commissions code system.  To protect business rules, only a few notebooks are uploaded.  To protect business data, all outputs have been stripped.  These notebooks give a glimpse of the top-level processing layer.
