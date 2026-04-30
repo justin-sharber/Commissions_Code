@@ -18,6 +18,7 @@ from dropDelimiters import *
 from cleanTerms import *
 from processNames import *
 from splitTerms import *
+from shorten import *
 
 #- utility
 from containsAny import containsAny
