@@ -111,6 +111,8 @@ wi.shape
 
 Top-level Jupyter notebooks act as the execution layer.  Each task receives a dedicated notebook - or in the case of full commissions processing, a notebook series.  Top-level notebooks load all modules from the lower tiers so that all processed data and utility functions are at hand at the start of each task, and notebooks can focus only on unique and pertinent operations.
 
+Notebooks enabled frequent checks on calculations.  Most cells would output summaries of new attributions or calculations.  Even simply calling `df.shape` could provide a bit of assurance that the last operation completed correctly.
+
 **Example - Slating orders for payment in Commissions Calculations Notebook**
 
 ![Slice of comp calc notebook](images/comp_calc_nb.png)
