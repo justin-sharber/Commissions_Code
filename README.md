@@ -113,7 +113,7 @@ Top-level Jupyter notebooks act as the execution layer.  Each task receives a de
 
 **Example - Slating orders for payment in Commissions Calculations Notebook**
 
-<img width="906" height="409" alt="comp calc nb" src="https://github.com/user-attachments/assets/13e9e5c2-ff64-41d5-a540-1d84613cdf22" />
+![Slice of comp calc notebook](images/comp_calc_nb.png)
 
 ## The Column Key System
 To handle inconsistent and changing schemas, I introduced a **column key abstraction**.
