@@ -50,8 +50,10 @@ I built a modularized code system using Python-pandas that simulates core databa
 The architecture is organized into three tiers.
 
 1. **Core Modules** - Basic utility functions used throughout the system.
-1. **Data Preparation Modules** - Dedicated processing functions and preloading for each data input.
-1. **Task-Oriented Python Notebooks** - All direct tasks are performed in notebooks, for clarity and quick review.
+1. **Data Preparation / "WI Modules"** - Dedicated processing functions and preloading for each data input.
+1. **Task-Oriented Processing Notebooks** - All direct tasks are performed in notebooks, for clarity and quick review.
+
+<img  alt="comp-system-reconst" src="https://github.com/user-attachments/assets/b3fe3a51-34cc-40cc-aded-59779a4dbec8" />
 
 
 ### Tier 1 - Core Modules
@@ -113,9 +115,10 @@ Top-level Jupyter notebooks act as the execution layer.  Each task receives a de
 
 Notebooks enabled frequent checks on calculations.  Most cells would output summaries of new attributions or calculations.  Even simply calling `df.shape` could provide a bit of assurance that the last operation completed correctly.
 
-**Example - Slating orders for payment in Commissions Calculations Notebook**
+### Example: Slating orders for payment in Commissions Calculations Notebook
 
 ![Slice of comp calc notebook](images/comp_calc_nb.png)
+
 
 ## The Column Key System
 To handle inconsistent and changing schemas, I introduced a **column key abstraction**.
